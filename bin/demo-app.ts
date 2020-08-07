@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import * as cdk from '@aws-cdk/core';
-import { DemoAppStack } from '../lib/demo-app-stack';
+import { LambdaStack } from '../lib/lambda-stack';
+import { CanaryStack } from '../lib/canary-stack';
 
 const app = new cdk.App();
-new DemoAppStack(app, 'DemoAppStack');
+new LambdaStack(app, 'LambdaStack');
+new CanaryStack(app, 'CanaryStack');

@@ -1,18 +1,19 @@
 {
-  "name": "demo-app",
+  "name": "reference-app",
   "version": "0.1.0",
   "bin": {
-    "demo-app": "bin/demo-app.js"
+    "reference-app": "bin/reference-app.js"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "postinstall": "../aws/aws-cdk/link-all.sh"
   },
   "devDependencies": {
-    "aws-cdk": "1.50.0",
-    "@aws-cdk/assert": "1.50.0",
+    "aws-cdk": "^1.50.0",
+    "@aws-cdk/assert": "^1.50.0",
     "@types/jest": "^25.2.1",
     "@types/node": "10.17.5",
     "jest": "^25.5.0",
@@ -21,9 +22,10 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@aws-cdk/aws-sns": "1.50.0",
-    "@aws-cdk/aws-sns-subscriptions": "1.50.0",
-    "@aws-cdk/aws-sqs": "1.50.0",
-    "@aws-cdk/core": "1.50.0"
+    "@aws-cdk/aws-lambda": "^1.50.0",
+    "@aws-cdk/aws-apigateway": "^1.50.0",
+    "@aws-cdk/aws-synthetics": "^1.50.0",
+    "@aws-cdk/core": "^1.50.0",
+    "@aws-cdk/aws-cloudwatch": "^1.50.0"
   }
 }
